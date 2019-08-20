@@ -1,6 +1,6 @@
 //task 1
-function minus(x) {
-    return function(y) {
+function minus(x = 0) {
+    return function(y = 0) {
         return x - y;
     }
 }
@@ -9,9 +9,9 @@ let res1 = minus(10)(4);
 console.log(res1);
 
 //task 2
-function multiplyMaker(x) {
+function multiplyMaker(x = 0) {
     let val = x;
-    return function(y) {
+    return function(y = 0) {
         return val *= y;
     }
 }
@@ -47,10 +47,10 @@ const stringWorker = (function() {
         return mainString.split('').reverse().join('');
     }
     return {
-        setString: setString,
-        getString: getString,
-        getStringLenght: getStringLenght,
-        getReverseString: getReverseString
+        setString,
+        getString,
+        getStringLenght,
+        getReverseString
     };
 })();
 
@@ -62,32 +62,32 @@ console.log(stringWorker.getStringLenght());
 const calculator = (function() {
     let value;
 
-    function setValue(x) {
+    function setValue(x = 0) {
         value = x;
         return this;
     }
 
-    function addValue(x) {
+    function addValue(x = 0) {
         value += x;
         return this;
     }
 
-    function subValue(x) {
+    function subValue(x = 0) {
         value -= x;
         return this;
     }
 
-    function multyValue(x) {
+    function multyValue(x = 0) {
         value *= x;
         return this;
     }
 
-    function divideValue(x) {
+    function divideValue(x = 0) {
         value /= x;
         return this;
     }
 
-    function involValue(x) {
+    function involValue(x = 0) {
         Math.pow(value, x);
         return this;
     }
@@ -98,13 +98,13 @@ const calculator = (function() {
     }
 
     return {
-        setValue: setValue,
-        addValue: addValue,
-        subValue: subValue,
-        multyValue: multyValue,
-        divideValue: divideValue,
-        involValue: involValue,
-        getValue: getValue
+        setValue,
+        addValue,
+        subValue,
+        multyValue,
+        divideValue,
+        involValue,
+        getValue
     }
 })();
 
